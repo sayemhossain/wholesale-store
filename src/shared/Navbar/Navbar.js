@@ -50,6 +50,9 @@ const Navbar = () => {
               <a>Home</a>
             </li>
             <li>
+              <a>Products</a>
+            </li>
+            <li>
               <a>Blog</a>
             </li>
             <li>

@@ -11,7 +11,7 @@ const HomeBranding = () => {
           </div>
           <div className="absolute top-24 right-12">
             <h1>Super Sell</h1>
-            <h1 className="text-3xl font-extrabold">New Collection</h1>
+            <h1 className="text-3xl font-bold">New Collection</h1>
             <p className="mt-3 underline">Shop Now</p>
           </div>
         </div>
@@ -19,7 +19,7 @@ const HomeBranding = () => {
           <img className="rounded-lg" src={banner2} alt="" />
           <div className="absolute top-24 right-12">
             <h1>New Season</h1>
-            <h1 className="text-3xl font-extrabold">Sale 40% Off</h1>
+            <h1 className="text-3xl font-bold">Sale 40% Off</h1>
             <p className="mt-3 underline">Shop Now</p>
           </div>
         </div>
