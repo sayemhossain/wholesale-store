@@ -9,13 +9,12 @@ module.exports = {
       {
         mytheme: {
           primary: "#a991f7",
-          secondary: "#f6d860",
+          secondary: "#F28C18",
           accent: "#37cdbe",
-          neutral: "#3d4451",
+          neutral: "#f6d860",
           "base-100": "#ffffff",
         },
       },
-      "cupcake",
     ],
   },
   plugins: [require("daisyui")],
