@@ -1,4 +1,7 @@
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { Link } from "react-router-dom";
 import useProducts from "../../../hooks/useProducts";
 import HomeProductsContainer from "./HomeProductsContainer";
 
@@ -14,6 +17,15 @@ const HomeProducts = () => {
             product={product}
           ></HomeProductsContainer>
         ))}
+      </div>
+      <div className="mt-4 text-center">
+        <Link className="hover:underline hover:text-red-800" to="/products">
+          See more{" "}
+          <FontAwesomeIcon
+            className="text-xs"
+            icon={faArrowRight}
+          ></FontAwesomeIcon>
+        </Link>
       </div>
     </div>
   );

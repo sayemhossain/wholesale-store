@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import logo from "../../img/logo2.webp";
 const Navbar = () => {
   return (
@@ -40,17 +41,17 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-          <a class="btn btn-ghost normal-case text-xl">
+          <Link to="/" class="btn btn-ghost normal-case text-xl">
             <img className="w-40" src={logo} alt="" />
-          </a>
+          </Link>
         </div>
         <div class="navbar-center hidden lg:flex">
           <ul class="menu menu-horizontal p-0">
             <li>
-              <a>Home</a>
+              <Link to="/">Home</Link>
             </li>
             <li>
-              <a>Products</a>
+              <Link to="/products">Products</Link>
             </li>
             <li>
               <a>Blog</a>
