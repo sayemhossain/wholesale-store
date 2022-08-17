@@ -1,5 +1,5 @@
 import React from "react";
-
+import logo from "../../img/logo2.webp";
 const Navbar = () => {
   return (
     <div>
@@ -41,7 +41,7 @@ const Navbar = () => {
             </ul>
           </div>
           <a class="btn btn-ghost normal-case text-xl">
-            Wholesale <span className="text-secondary ml-2">Store</span>
+            <img className="w-40" src={logo} alt="" />
           </a>
         </div>
         <div class="navbar-center hidden lg:flex">
