@@ -1,7 +1,20 @@
+import { faAngleDown, faUser } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { signOut } from "firebase/auth";
 import React from "react";
-import { Link } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { Link, useNavigate } from "react-router-dom";
+import auth from "../../firebase.init";
 import logo from "../../img/logo2.webp";
 const Navbar = () => {
+  const navigate = useNavigate();
+  const [user] = useAuthState(auth);
+  // console.log(user);
+  const logout = () => {
+    signOut(auth);
+    navigate("/");
+  };
+  console.log(user);
   return (
     <div>
       <div class="navbar md:px-28 bg-base-100 shadow-lg md:py-7">
@@ -65,10 +78,57 @@ const Navbar = () => {
           </ul>
         </div>
         <div class="navbar-end">
-          <div className="flex gap-5">
-            <a>Login</a>
-            <a>Sign up</a>
-          </div>
+          {user ? (
+            <div class="dropdown dropdown-end">
+              <label tabindex="0" class="flex">
+                <p className="w-6 h-6 bg-secondary text-black rounded-full flex items-center justify-center">
+                  <FontAwesomeIcon
+                    className="text-gray-600"
+                    icon={faUser}
+                  ></FontAwesomeIcon>
+                </p>
+                <div className="flex items-center gap-2">
+                  <p className="ml-2 font-semibold uppercase hover:cursor-pointer">
+                    {user ? user.displayName : "Unknown user"}
+                  </p>
+                  <FontAwesomeIcon
+                    className="text-sm text-secondary"
+                    icon={faAngleDown}
+                  ></FontAwesomeIcon>
+                </div>
+              </label>
+              <ul
+                tabindex="0"
+                class="mr-[-4rem] mt-2 dropdown-content menu p-2 shadow bg-primary rounded-md w-52 text-gray-800 "
+              >
+                <li>
+                  <Link to="/">Profile Settings</Link>
+                </li>
+
+                <li>
+                  <Link to="/">Support</Link>
+                </li>
+                <li>
+                  <p onClick={logout}>Logout</p>
+                </li>
+              </ul>
+            </div>
+          ) : (
+            <>
+              <Link
+                to="/signin"
+                class="border-2 border-gray-800 rounded-full py-1.5 px-7 hidden md:block mr-5 font-semibold hover:bg-secondary hover:text-white duration-300 hover:border-secondary hover:cursor-pointer"
+              >
+                Sign In
+              </Link>{" "}
+              <Link
+                to="/signup"
+                class="bg-secondary text-white rounded-full py-2 px-7 hover:cursor-pointer"
+              >
+                Sign Up
+              </Link>
+            </>
+          )}
         </div>
       </div>
     </div>

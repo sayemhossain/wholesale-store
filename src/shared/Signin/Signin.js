@@ -1,0 +1,131 @@
+import React, { useRef } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import {
+  useSignInWithEmailAndPassword,
+  useSignInWithGoogle,
+} from "react-firebase-hooks/auth";
+import useToken from "../../hooks/useToken";
+import auth from "../../firebase.init";
+import { sendPasswordResetEmail } from "firebase/auth";
+import { toast, ToastContainer } from "react-toastify";
+
+const Signin = () => {
+  const emailRef = useRef("");
+  const passwordRef = useRef("");
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
+  const [signInWithGoogle, googleUser, googleLoading, googleError] =
+    useSignInWithGoogle(auth);
+  const navigate = useNavigate();
+
+  const [token] = useToken(user || googleUser);
+
+  const handleSignin = async (e) => {
+    e.preventDefault();
+
+    const email = emailRef.current.value;
+    const password = passwordRef.current.value;
+
+    await signInWithEmailAndPassword(email, password);
+  };
+
+  const resetPassword = () => {
+    const email = emailRef.current.value;
+    sendPasswordResetEmail(email);
+    toast("Reset email send!");
+  };
+
+  let errorElement;
+  if (error) {
+    errorElement = (
+      <div>
+        <p className="text-gray-800 text-xs mt-2 px-3">
+          User or password are not valid!
+          <span
+            onClick={resetPassword}
+            className="text-orange-400 ml-1 cursor-pointer underline"
+          >
+            Forget password?
+          </span>
+        </p>
+      </div>
+    );
+  }
+  if (token) {
+    navigate("/");
+  }
+  return (
+    <div>
+      <div className="normal-font">
+        <form action="" onSubmit={handleSignin}>
+          <div className="flex flex-col justify-center items-center h-full md:my-16  w-96 mx-auto shadow-2xl rounded-2xl pb-7 ">
+            <h3 className="font-bold py-5 text-xl uppercase header-font">
+              Sign In
+            </h3>
+            <div class="form-control w-full max-w-xs">
+              <label class="label">
+                <span class="label-text">Your Email</span>
+              </label>
+              <input
+                type="email"
+                ref={emailRef}
+                placeholder="example@gmail.com"
+                class="input input-bordered w-full max-w-xs"
+              />
+            </div>
+            <div class="form-control w-full max-w-xs">
+              <label class="label">
+                <span class="label-text">Your Password</span>
+              </label>
+              <input
+                type="password"
+                ref={passwordRef}
+                placeholder="******"
+                class="input input-bordered w-full max-w-xs"
+              />
+            </div>
+            <p>{errorElement}</p>
+            <button
+              type="submit"
+              className="btn btn-accent btn-sm px-16 text-white mt-4 rounded-full hover:border-primary hover:rotate-3 hover:scale-90 duration-500"
+            >
+              Sign In
+            </button>
+            <p className="mt-2 text-sm">
+              New in Wholesale store?
+              <Link className="text-red-800 ml-1" to="/signup">
+                Create new account
+              </Link>
+            </p>
+            <div className="pt-4 text-center text-xs">
+              <button
+                onClick={() => signInWithGoogle()}
+                className="text-white bg-[#4285F4] hover:bg-[#4285F4]/90 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-full text-sm px-4 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55"
+              >
+                <svg
+                  class="w-4 h-4 mr-2 -ml-1"
+                  aria-hidden="true"
+                  focusable="false"
+                  data-prefix="fab"
+                  data-icon="google"
+                  role="img"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 488 512"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z"
+                  ></path>
+                </svg>
+                Continue with Google
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+      <ToastContainer></ToastContainer>
+    </div>
+  );
+};
+
+export default Signin;
