@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import homeAdsImg from "../../../img/add-img.png";
 
 const HomeAds = () => {
@@ -14,7 +15,9 @@ const HomeAds = () => {
             <h1 className="text-3xl font-extrabold">Best Summer Collection</h1>
             <h4 className="mt-3 font-bold text-xl ">Sale Get up to 50% Off</h4>
             <div>
-              <button className="btn btn-neutral mt-7">Shop Now</button>
+              <Link to="/products" className="btn btn-neutral mt-7">
+                Shop Now
+              </Link>
             </div>
           </div>
         </div>

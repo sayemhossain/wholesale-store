@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import banner1 from "../../../img/cover-img/banner1.jpg";
 import banner2 from "../../../img/cover-img/banner2.jpg";
 const HomeBranding = () => {
@@ -12,7 +13,9 @@ const HomeBranding = () => {
           <div className="absolute top-24 right-12">
             <h1>Super Sell</h1>
             <h1 className="text-3xl font-bold">New Collection</h1>
-            <p className="mt-3 underline">Shop Now</p>
+            <p className="mt-3 underline">
+              <Link to="/products">Shop Now</Link>
+            </p>
           </div>
         </div>
         <div className="relative">
@@ -20,7 +23,9 @@ const HomeBranding = () => {
           <div className="absolute top-24 right-12">
             <h1>New Season</h1>
             <h1 className="text-3xl font-bold">Sale 40% Off</h1>
-            <p className="mt-3 underline">Shop Now</p>
+            <p className="mt-3 underline">
+              <Link to="/products">Shop Now</Link>
+            </p>
           </div>
         </div>
       </div>

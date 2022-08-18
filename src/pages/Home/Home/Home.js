@@ -4,6 +4,7 @@ import HomeBanner from "../HomeBanner/HomeBanner";
 import HomeBranding from "../HomeBranding/HomeBranding";
 import HomeProducts from "../HomeProducts/HomeProducts";
 import Subscribe from "../Subscribe/Subscribe";
+import HomeContact from "../HomeContact/HomeContact";
 
 const Home = () => {
   return (
@@ -12,6 +13,7 @@ const Home = () => {
       <HomeBranding></HomeBranding>
       <HomeProducts></HomeProducts>
       <HomeAds></HomeAds>
+      <HomeContact></HomeContact>
       <Subscribe></Subscribe>
     </div>
   );
