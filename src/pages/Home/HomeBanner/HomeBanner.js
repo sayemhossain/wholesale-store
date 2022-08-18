@@ -13,7 +13,7 @@ const HomeBanner = () => {
             The most popular wholesale <br /> store in Bangladesh
           </h1>
           <div className="mt-5">
-            <button className="btn btn-secondary">Learn more</button>
+            <button className="btn btn-neutral">Learn more</button>
           </div>
         </div>
         <div className="">
