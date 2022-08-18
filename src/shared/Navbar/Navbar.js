@@ -14,7 +14,7 @@ const Navbar = () => {
     signOut(auth);
     navigate("/");
   };
-  console.log(user);
+
   return (
     <div>
       <div class="navbar md:px-28 bg-base-100 shadow-lg md:py-7">

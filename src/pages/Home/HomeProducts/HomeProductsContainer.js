@@ -1,9 +1,12 @@
 import { faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const HomeProductsContainer = ({ product }) => {
+  const navigate = useNavigate();
   const {
+    _id,
     name,
     img,
     description,
@@ -13,6 +16,11 @@ const HomeProductsContainer = ({ product }) => {
     price,
     rating,
   } = product;
+
+  const navigateToProductDetails = () => {
+    navigate(`/purchase/${_id}`);
+  };
+
   return (
     <div className="shadow-md p-3 rounded-md">
       <div>
@@ -50,7 +58,12 @@ const HomeProductsContainer = ({ product }) => {
             </span>
           </p>
           <div className="mt-3 mb-1 text-center">
-            <button className="btn btn-secondary btn-xs">Order Now</button>
+            <button
+              onClick={() => navigateToProductDetails(_id)}
+              className="btn btn-secondary btn-xs"
+            >
+              Order Now
+            </button>
           </div>
         </div>
       </div>
