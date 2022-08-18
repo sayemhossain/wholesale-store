@@ -55,7 +55,7 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to="/" class="btn btn-ghost normal-case text-xl">
-            <img className="w-40" src={logo} alt="" />
+            <img className="w-40 hidden md:block" src={logo} alt="" />
           </Link>
         </div>
         <div class="navbar-center hidden lg:flex">
@@ -66,6 +66,11 @@ const Navbar = () => {
             <li>
               <Link to="/products">Products</Link>
             </li>
+            {user && (
+              <li>
+                <Link to="/dashboard">Dashboard</Link>
+              </li>
+            )}
             <li>
               <a>Blog</a>
             </li>
@@ -99,7 +104,7 @@ const Navbar = () => {
               </label>
               <ul
                 tabindex="0"
-                class="mr-[-4rem] mt-2 dropdown-content menu p-2 shadow bg-primary rounded-md w-52 text-gray-800 "
+                class="md:mr-[-4rem] mt-2 dropdown-content menu p-2 shadow bg-primary rounded-md w-52 text-gray-800 "
               >
                 <li>
                   <Link to="/">Profile Settings</Link>

@@ -39,6 +39,10 @@ const HomeProductsContainer = ({ product }) => {
               {rating}
             </span>
           </h1>
+          <p>
+            Price:{" "}
+            <span className="font-semibold text-gray-500">{price} TK</span>
+          </p>
 
           <p className="mt-2 text-sm">
             {description.length > 150
