@@ -9,7 +9,6 @@ import logo from "../../img/logo2.webp";
 const Navbar = () => {
   const navigate = useNavigate();
   const [user] = useAuthState(auth);
-  // console.log(user);
   const logout = () => {
     signOut(auth);
     navigate("/");
@@ -87,39 +86,21 @@ const Navbar = () => {
         </div>
         <div class="navbar-end">
           {user ? (
-            <div class="dropdown dropdown-end">
-              <label tabindex="0" class="flex">
-                <p className="w-6 h-6 bg-secondary text-black rounded-full flex items-center justify-center">
-                  <FontAwesomeIcon
-                    className="text-gray-600"
-                    icon={faUser}
-                  ></FontAwesomeIcon>
-                </p>
-                <div className="flex items-center gap-2">
-                  <p className="ml-2 font-semibold uppercase hover:cursor-pointer">
-                    {user ? user.displayName : "Unknown user"}
-                  </p>
-                  <FontAwesomeIcon
-                    className="text-sm text-secondary"
-                    icon={faAngleDown}
-                  ></FontAwesomeIcon>
-                </div>
-              </label>
-              <ul
-                tabindex="0"
-                class="md:mr-[-4rem] mt-2 dropdown-content menu p-2 shadow bg-primary rounded-md w-52 text-gray-800 "
-              >
-                <li>
-                  <Link to="/">Profile Settings</Link>
-                </li>
-
-                <li>
-                  <Link to="/">Support</Link>
-                </li>
-                <li>
-                  <p onClick={logout}>Logout</p>
-                </li>
-              </ul>
+            <p
+              onClick={logout}
+              class="border-2 bg-white border-gray-300 text-gray-700 rounded-full py-1.5 px-7 hidden md:block mr-5 font-semibold hover:cursor-pointer"
+            >
+              Sign Out
+            </p>
+          ) : (
+            ""
+          )}
+          {user ? (
+            <div className="flex items-center gap-2">
+              <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
+              <p className="font-semibold uppercase hover:cursor-pointer">
+                {user ? user.displayName : "Unknown user"}
+              </p>
             </div>
           ) : (
             <>
