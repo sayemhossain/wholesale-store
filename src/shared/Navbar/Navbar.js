@@ -55,7 +55,10 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to="/" class="btn btn-ghost normal-case text-xl">
-            <img className="w-40 hidden md:block" src={logo} alt="" />
+            {/* <img className="w-40 hidden md:block" src={logo} alt="" /> */}
+            <p className="uppercase">
+              Wholesale <span className="text-neutral">Store</span>
+            </p>
           </Link>
         </div>
         <div class="navbar-center hidden lg:flex">

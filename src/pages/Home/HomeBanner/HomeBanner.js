@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import cover from "../../../img/cover-img/cover.webp";
 
 const HomeBanner = () => {
@@ -13,7 +14,9 @@ const HomeBanner = () => {
             The most popular wholesale <br /> store in Bangladesh
           </h1>
           <div className="mt-5">
-            <button className="btn btn-neutral">Learn more</button>
+            <Link className="px-5" to="/products" className="btn btn-neutral">
+              Shop Now
+            </Link>
           </div>
         </div>
         <div className="">

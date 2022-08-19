@@ -76,7 +76,7 @@ const Purchase = () => {
   return (
     <div>
       <section>
-        <div className="py-10 md:py-20 md:pl-5 md:pr-20 min-h-screen">
+        <div className="py-10 md:py-20 md:pl-5 md:pr-20 min-h-screen max-w-[1340px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 px-5 md:pl-20 gap-10">
             <div className="">
               <div
