@@ -48,9 +48,9 @@ const MyProfile = () => {
           User Profile
         </h3>
       </div>
-      <hr />
+
       <div className="pt-5">
-        <div class="card md:px-20 md:py-10 mb-10 mx-5 md:mx-10 lg:card-side bg-base-100">
+        <div class="card md:px-20 md:py-10 mb-10 mx-5 md:mx-10 lg:card-side bg-transparent">
           <div>
             <div class="card md:w-96 bg-base-100 shadow-xl">
               <div class="card-body">

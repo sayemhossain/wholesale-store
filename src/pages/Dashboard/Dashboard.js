@@ -2,9 +2,11 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import auth from "../../firebase.init";
+import useAdmin from "../../hooks/useAdmin";
 
 const Dashboard = () => {
   const [user] = useAuthState(auth);
+  const [admin] = useAdmin(user);
 
   return (
     <div className="bg-gray-50">
@@ -16,7 +18,7 @@ const Dashboard = () => {
               className="text-4xl text-center pt-10 pb-3 text-base-400"
               style={{ fontFamily: "Teko" }}
             >
-              Welcome to your Dashboard
+              Your Dashboard
             </h2>
             <label
               for="dashboard-sidebar"
@@ -45,17 +47,54 @@ const Dashboard = () => {
 
           <ul class="menu p-4 bg-gray-100 overflow-y-auto w-48 md:w-72  shadow-2xl text-base-content">
             <li>
-              <Link
-                className="bg-secondary uppercase"
-                to="/dashboard/myprofile"
-              >
+              <Link className="" to="/dashboard/myprofile">
                 My Profile
               </Link>
             </li>
             <li>
-              <Link className=" uppercase" to="/dashboard/myorders">
+              <Link className=" " to="/dashboard/myorders">
                 My Orders
               </Link>
+            </li>
+            <li>
+              <Link to="/dashboard">Payment Status</Link>
+            </li>
+            <li>
+              <Link to="/dashboard">Oders History</Link>
+            </li>
+            <li>
+              <Link className=" " to="/dashboard/reviews">
+                Add A Review
+              </Link>
+            </li>
+            <li>
+              <Link className=" " to="/dashboard/addproducts">
+                Add New Products
+              </Link>
+            </li>
+            <li>
+              <Link to="/dashboard">Manage Products</Link>
+            </li>
+            <li>
+              <Link to="/dashboard">Manage All orders</Link>
+            </li>
+            <li>
+              <Link to="/dashboard">Upload Blogs</Link>
+            </li>
+            <li>
+              <Link to="/dashboard">Manage Blogs</Link>
+            </li>
+            <li>
+              <Link to="/dashboard">All user</Link>
+            </li>
+            <li>
+              <Link to="/dashboard">Make admin</Link>
+            </li>
+            <li>
+              <Link to="/dashboard">Make Moderator</Link>
+            </li>
+            <li>
+              <Link to="/dashboard">Make Super Admin</Link>
             </li>
           </ul>
         </div>
