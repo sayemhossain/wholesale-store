@@ -106,13 +106,13 @@ const Navbar = () => {
             <>
               <Link
                 to="/signin"
-                class="border-2 bg-secondary border-gray-300 text-gray-700 rounded-full py-1.5 px-7 hidden md:block mr-5 font-semibold hover:cursor-pointer"
+                class="border-2 bg-secondary border-gray-300 text-gray-700 rounded-none py-1.5 px-7 hidden md:block mr-5 font-semibold hover:cursor-pointer"
               >
                 Sign In
               </Link>{" "}
               <Link
                 to="/signup"
-                class="bg-primary border-2 border-gray-300 text-gray-700 font-semibold rounded-full py-1.5 px-7 hover:cursor-pointer"
+                class="bg-primary border-2 border-gray-300 text-gray-700 font-semibold rounded-none py-1.5 px-7 hover:cursor-pointer"
               >
                 Sign Up
               </Link>
