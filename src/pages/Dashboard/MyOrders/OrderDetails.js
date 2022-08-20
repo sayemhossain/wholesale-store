@@ -64,12 +64,12 @@ const OrderDetails = ({ order, index }) => {
               onClick={handleDeleteOrder}
               className="btn btn-xs btn-error px-5"
             >
-              Cancle
+              Cancel
             </button>
           )}
           {price && paid && (
             <button className="btn btn-outline btn-xs btn-error px-5" disabled>
-              Cancle
+              Cancel
             </button>
           )}
         </td>
