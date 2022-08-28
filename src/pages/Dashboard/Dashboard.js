@@ -7,6 +7,7 @@ import useAdmin from "../../hooks/useAdmin";
 const Dashboard = () => {
   const [user] = useAuthState(auth);
   const [admin] = useAdmin(user);
+  console.log(admin);
 
   return (
     <div className="bg-gray-50">
@@ -60,38 +61,27 @@ const Dashboard = () => {
               <Link to="/dashboard">Payment Status</Link>
             </li>
             <li>
-              <Link className=" " to="/dashboard/reviews">
+              <Link className=" " to="/dashboard/addreview">
                 Add A Review
               </Link>
             </li>
             <li>
-              <Link className=" " to="/dashboard/addproducts">
-                Add New Products
-              </Link>
-            </li>
-            <li>
-              <Link to="/dashboard/manageproducts">Manage Products</Link>
-            </li>
-            <li>
-              <Link to="/dashboard/manageallorder">Manage All orders</Link>
-            </li>
-            <li>
-              <Link to="/dashboard">Upload Blogs</Link>
-            </li>
-            <li>
-              <Link to="/dashboard">Manage Blogs</Link>
-            </li>
-            <li>
-              <Link to="/dashboard/alluser">All user</Link>
-            </li>
-            <li>
-              <Link to="/dashboard">Make admin</Link>
-            </li>
-            <li>
-              <Link to="/dashboard">Make Moderator</Link>
-            </li>
-            <li>
-              <Link to="/dashboard">Make Super Admin</Link>
+              {admin && (
+                <>
+                  <Link className=" " to="/dashboard/managereviews">
+                    Manage All Review
+                  </Link>
+                  <Link className=" " to="/dashboard/addproducts">
+                    Add New Products
+                  </Link>
+                  <Link to="/dashboard/manageproducts">Manage Products</Link>
+                  <Link to="/dashboard/manageallorder">Manage All orders</Link>
+                  <Link to="/dashboard">Upload Blogs</Link>
+                  <Link to="/dashboard">Manage Blogs</Link>
+                  <Link to="/dashboard/alluser">All user & Make Admin</Link>
+                  <Link to="/dashboard/alladmin">All admin</Link>
+                </>
+              )}
             </li>
           </ul>
         </div>

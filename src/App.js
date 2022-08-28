@@ -2,10 +2,13 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import Contact from "./pages/Contact/Contact";
 import AddProducts from "./pages/Dashboard/AddProducts/AddProducts";
+import AddReview from "./pages/Dashboard/AddReview/AddReview";
+import AllAdmin from "./pages/Dashboard/AllAdmin/AllAdmin";
 import AllUser from "./pages/Dashboard/AllUser/AllUser";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import ManageAllOrder from "./pages/Dashboard/ManageAllOrder/ManageAllOrder";
 import ManageProducts from "./pages/Dashboard/ManageProducts/ManageProducts";
+import ManageReviews from "./pages/Dashboard/ManageReviews/ManageReviews";
 import MyOrders from "./pages/Dashboard/MyOrders/MyOrders";
 import MyProfile from "./pages/Dashboard/MyProfile/MyProfile";
 import Home from "./pages/Home/Home/Home";
@@ -56,7 +59,13 @@ function App() {
             path="manageallorder"
             element={<ManageAllOrder></ManageAllOrder>}
           ></Route>
+          <Route path="addreview" element={<AddReview></AddReview>}></Route>
+          <Route
+            path="managereviews"
+            element={<ManageReviews></ManageReviews>}
+          ></Route>
           <Route path="alluser" element={<AllUser></AllUser>}></Route>
+          <Route path="alladmin" element={<AllAdmin></AllAdmin>}></Route>
         </Route>
         <Route path="/contact" element={<Contact></Contact>}></Route>
         <Route path="/signin" element={<Signin></Signin>}></Route>

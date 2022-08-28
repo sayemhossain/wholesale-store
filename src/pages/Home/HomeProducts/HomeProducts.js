@@ -10,7 +10,7 @@ const HomeProducts = () => {
   return (
     <div className="md:px-28 py-10 max-w-[1340px] mx-auto">
       <h1 className="text-4xl text-center font-semibold">Exclusive Products</h1>
-      <div className="grid grid-cols-4 gap-5 mt-10">
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-5 mt-10 mx-5 md:mx-0">
         {products.map((product) => (
           <HomeProductsContainer
             key={product._id}

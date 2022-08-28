@@ -4,11 +4,15 @@ import homeAdsImg from "../../../img/add-img.png";
 
 const HomeAds = () => {
   return (
-    <div className="md:px-28 my-10 bg-primary h-96">
+    <div className="md:px-28 my-10 bg-primary py-10">
       <div className="max-w-[1340px] mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2">
-          <div className="-mt-[77px]">
-            <img src={homeAdsImg} alt="" />
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5 items-center">
+          <div className="">
+            <img
+              className="rounded-lg"
+              src="https://fashinza.com/textile/wp-content/uploads/2022/01/shutterstock_1801491262-1-1.jpg"
+              alt=""
+            />
           </div>
           <div className="flex flex-col justify-center">
             <p className="text-pink-600 font-semibold">New season trends!</p>

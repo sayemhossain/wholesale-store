@@ -77,9 +77,6 @@ const Navbar = () => {
               <a>Blog</a>
             </li>
             <li>
-              <a>About</a>
-            </li>
-            <li>
               <Link to="/contact">Contact</Link>
             </li>
           </ul>

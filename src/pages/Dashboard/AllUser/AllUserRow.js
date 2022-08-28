@@ -13,7 +13,7 @@ const AllUserRow = ({ user, index }) => {
       },
     })
       .then((res) => res.json())
-      .then((data) => toast.success("Make admin done"));
+      .then((data) => alert("Make admin done"));
   };
 
   return (
@@ -26,10 +26,10 @@ const AllUserRow = ({ user, index }) => {
         ) : (
           <button
             onClick={makeAdmin}
-            className="bg-primary px-2 py-0.5 rounded-full text-xs text-white flex items-center font-semibold"
+            className="bg-accent px-2 py-0.5 rounded-sm text-xs text-white flex items-center font-semibold"
           >
             <FontAwesomeIcon
-              className="mr-2 p-1 bg-gray-50 rounded-full text-black"
+              className="mr-2 rounded-full text-black"
               icon={faShield}
             ></FontAwesomeIcon>{" "}
             Make Admin

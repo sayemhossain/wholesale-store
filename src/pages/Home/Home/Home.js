@@ -5,6 +5,7 @@ import HomeBranding from "../HomeBranding/HomeBranding";
 import HomeProducts from "../HomeProducts/HomeProducts";
 import Subscribe from "../Subscribe/Subscribe";
 import HomeContact from "../HomeContact/HomeContact";
+import Review from "../Review/Review";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <HomeBranding></HomeBranding>
       <HomeProducts></HomeProducts>
       <HomeAds></HomeAds>
+      <Review></Review>
       <HomeContact></HomeContact>
       <Subscribe></Subscribe>
     </div>

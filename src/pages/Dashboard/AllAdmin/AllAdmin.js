@@ -1,9 +1,10 @@
 import React from "react";
+import useAllAdmin from "../../../hooks/useAllAdmin";
 import useUser from "../../../hooks/useUser";
-import AllUserRow from "./AllUserRow";
+import AllAdminRow from "./AllAdminRow";
 
-const AllUser = () => {
-  const [users, setUsers] = useUser([]);
+const AllAdmin = () => {
+  const [admins] = useAllAdmin([]);
 
   return (
     <div>
@@ -13,7 +14,7 @@ const AllUser = () => {
           <div>
             <div>
               <div className="mb-10">
-                <h3 className="text-xl text-center uppercase">All User</h3>
+                <h3 className="text-xl text-center uppercase">All Admin</h3>
                 <hr className="w-28 mx-auto mt-2" />
               </div>
               <div className="md:w-[800px] md:pb-10 p-2">
@@ -23,16 +24,15 @@ const AllUser = () => {
                       <tr>
                         <th>No.</th>
                         <th>Email</th>
-                        <th>Make Admin</th>
                       </tr>
                     </thead>
                     <tbody>
-                      {users?.map((user, index) => (
-                        <AllUserRow
-                          key={user._id}
-                          user={user}
+                      {admins?.map((admin, index) => (
+                        <AllAdminRow
+                          key={admin._id}
+                          admin={admin}
                           index={index}
-                        ></AllUserRow>
+                        ></AllAdminRow>
                       ))}
                     </tbody>
                   </table>
@@ -46,4 +46,4 @@ const AllUser = () => {
   );
 };
 
-export default AllUser;
+export default AllAdmin;
