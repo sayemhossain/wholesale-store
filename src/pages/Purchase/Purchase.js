@@ -51,7 +51,7 @@ const Purchase = () => {
       phone,
     };
     const newQuantity = available_quantity - orderQuantity;
-    fetch(`https://stark-shelf-45913.herokuapp.com/order`, {
+    fetch(`http://localhost:5000/order`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -60,7 +60,7 @@ const Purchase = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        const url = `https://stark-shelf-45913.herokuapp.com/products/${_id}`;
+        const url = `http://localhost:5000/products/${_id}`;
         fetch(url, {
           method: "PUT",
           headers: {

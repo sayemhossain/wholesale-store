@@ -3,6 +3,7 @@ import "./App.css";
 import Contact from "./pages/Contact/Contact";
 import AddProducts from "./pages/Dashboard/AddProducts/AddProducts";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import ManageProducts from "./pages/Dashboard/ManageProducts/ManageProducts";
 import MyOrders from "./pages/Dashboard/MyOrders/MyOrders";
 import MyProfile from "./pages/Dashboard/MyProfile/MyProfile";
 import Home from "./pages/Home/Home/Home";
@@ -44,6 +45,10 @@ function App() {
           <Route
             path="addproducts"
             element={<AddProducts></AddProducts>}
+          ></Route>
+          <Route
+            path="manageproducts"
+            element={<ManageProducts></ManageProducts>}
           ></Route>
         </Route>
         <Route path="/contact" element={<Contact></Contact>}></Route>

@@ -22,7 +22,7 @@ const OrderDetails = ({ order, index }) => {
   } = order;
 
   const handleDeleteOrder = () => {
-    fetch(`https://stark-shelf-45913.herokuapp.com/order/${_id}`, {
+    fetch(`http://localhost:5000/order/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
