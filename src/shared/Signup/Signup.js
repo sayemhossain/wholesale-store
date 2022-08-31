@@ -15,19 +15,22 @@ const Signup = () => {
     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
     useSignInWithGoogle(auth);
-  const [updateProfile] = useUpdateProfile(auth);
+  const [updateProfile, updating, updateError] = useUpdateProfile(auth);
   const navigate = useNavigate();
 
   const [token] = useToken(user || googleUser);
+
   const handleSignup = async (e) => {
     e.preventDefault();
 
     const name = e.target.name.value;
     const email = e.target.email.value;
     const password = e.target.password.value;
-    // for update name
-    await updateProfile({ displayName: name });
+    console.log(name);
+
     await createUserWithEmailAndPassword(email, password);
+    // for update name
+    updateProfile({ displayName: name });
   };
   let errorElement;
   if (error) {

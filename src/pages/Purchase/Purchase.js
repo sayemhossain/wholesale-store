@@ -30,10 +30,10 @@ const Purchase = () => {
     const phone = event.target.phone.value;
 
     if (orderQuantity > available_quantity) {
-      return toast.error("Sorry we don't have enough products !");
+      return alert("Sorry we don't have enough products !");
     }
     if (orderQuantity < minimum_order_quantity) {
-      return toast.error("You have to fulfil our minimum orders requirment !");
+      return alert("You have to fulfil our minimum orders requirment !");
     }
 
     const totalCost = orderQuantity * price;
@@ -51,7 +51,7 @@ const Purchase = () => {
       phone,
     };
     const newQuantity = available_quantity - orderQuantity;
-    fetch(`http://localhost:5000/order`, {
+    fetch(`https://stark-shelf-45913.herokuapp.com/order`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -60,7 +60,7 @@ const Purchase = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        const url = `http://localhost:5000/products/${_id}`;
+        const url = `https://stark-shelf-45913.herokuapp.com/products/${_id}`;
         fetch(url, {
           method: "PUT",
           headers: {
@@ -69,7 +69,7 @@ const Purchase = () => {
           body: JSON.stringify({ newQuantity }),
         })
           .then((res) => res.json())
-          .then((data) => toast.success("Your order is Pending!"));
+          .then((data) => alert("Your order is Pending!"));
       });
     event.target.reset();
   };

@@ -1,10 +1,19 @@
 import { faCircleCheck, faTrashCan } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 
 const OrderDetails = ({ order, index }) => {
+  // const { id } = useParams();
+
+  // const [payment, setPayment] = useState({});
+  // useEffect(() => {
+  //   fetch(`https://stark-shelf-45913.herokuapp.com/payment/${id}`)
+  //     .then((res) => res.json())
+  //     .then((data) => setPayment(data));
+  // }, []);
+
   const [deletingOrder, setDeletingOrder] = useState(false);
   const {
     _id,
@@ -17,12 +26,12 @@ const OrderDetails = ({ order, index }) => {
     phone,
     totalCost,
     paid,
-    transactionId,
     orderQuantity,
+    transactionId,
   } = order;
 
   const handleDeleteOrder = () => {
-    fetch(`http://localhost:5000/order/${_id}`, {
+    fetch(`https://stark-shelf-45913.herokuapp.com/order/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

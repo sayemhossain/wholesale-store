@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 const useAllAdmin = () => {
   const [admins, setAdmins] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/alladmin`)
+    fetch(`https://stark-shelf-45913.herokuapp.com/alladmin`)
       .then((res) => res.json())
       .then((data) => setAdmins(data));
   }, []);

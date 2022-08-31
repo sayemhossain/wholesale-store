@@ -28,17 +28,7 @@ const HomeProductsContainer = ({ product }) => {
           <img className="w-full h-60 rounded" src={img} alt="" />
         </div>
         <div className="mt-2">
-          <h1 className="font-semibold">
-            {name}{" "}
-            <span className="text-sm ml-2">
-              {" "}
-              <FontAwesomeIcon
-                className="text-yellow-300"
-                icon={faStar}
-              ></FontAwesomeIcon>{" "}
-              {rating}
-            </span>
-          </h1>
+          <h1 className="font-semibold">{name}</h1>
           <p>
             Price:{" "}
             <span className="font-semibold text-gray-500">{price} TK</span>

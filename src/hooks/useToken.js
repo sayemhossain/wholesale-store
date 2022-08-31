@@ -4,9 +4,11 @@ const useToken = (user) => {
   const [token, setToken] = useState("");
   useEffect(() => {
     const email = user?.user?.email;
-    const currentUser = { email: email };
+    const name = user?.user?.displayName;
+    console.log("user token", name);
+    const currentUser = { email: email, name: name };
     if (email) {
-      fetch(`http://localhost:5000/user/${email}`, {
+      fetch(`https://stark-shelf-45913.herokuapp.com/user/${email}`, {
         method: "PUT",
         headers: {
           "contant-type": "application/json",
