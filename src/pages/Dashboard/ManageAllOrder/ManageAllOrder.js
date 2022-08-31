@@ -10,7 +10,7 @@ const ManageAllOrder = () => {
     isLoading,
     refetch,
   } = useQuery("users", () =>
-    fetch("https://stark-shelf-45913.herokuapp.com/orders", {
+    fetch("http://localhost:5000/orders", {
       method: "GET",
     }).then((res) => res.json())
   );

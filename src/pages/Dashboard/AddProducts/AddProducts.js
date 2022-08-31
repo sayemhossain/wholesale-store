@@ -23,7 +23,7 @@ const AddProducts = () => {
       price,
     };
 
-    fetch(`https://stark-shelf-45913.herokuapp.com/products`, {
+    fetch(`http://localhost:5000/products`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

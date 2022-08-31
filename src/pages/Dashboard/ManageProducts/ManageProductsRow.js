@@ -14,7 +14,7 @@ const ManageProductsRow = ({ product, index }) => {
     img,
   } = product;
   const handleDeleteTool = () => {
-    fetch(`https://stark-shelf-45913.herokuapp.com/products/${_id}`, {
+    fetch(`http://localhost:5000/products/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())
