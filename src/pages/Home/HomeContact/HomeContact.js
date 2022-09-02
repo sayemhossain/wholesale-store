@@ -1,7 +1,7 @@
 import React from "react";
 const HomeContact = () => {
   const handleContact = (e) => {
-    e.preventDefualt();
+    e.preventDefault();
 
     const name = e.target.name.value;
     const email = e.target.email.value;

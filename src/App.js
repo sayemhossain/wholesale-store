@@ -5,6 +5,7 @@ import AddProducts from "./pages/Dashboard/AddProducts/AddProducts";
 import AddReview from "./pages/Dashboard/AddReview/AddReview";
 import AllAdmin from "./pages/Dashboard/AllAdmin/AllAdmin";
 import AllUser from "./pages/Dashboard/AllUser/AllUser";
+import ContactMessage from "./pages/Dashboard/ContactMessage/ContactMessage";
 import Dashboard from "./pages/Dashboard/Dashboard";
 import ManageAllOrder from "./pages/Dashboard/ManageAllOrder/ManageAllOrder";
 import ManageProducts from "./pages/Dashboard/ManageProducts/ManageProducts";
@@ -70,6 +71,10 @@ function App() {
           <Route
             path="managereviews"
             element={<ManageReviews></ManageReviews>}
+          ></Route>
+          <Route
+            path="contactmessage"
+            element={<ContactMessage></ContactMessage>}
           ></Route>
           <Route path="alluser" element={<AllUser></AllUser>}></Route>
           <Route path="alladmin" element={<AllAdmin></AllAdmin>}></Route>

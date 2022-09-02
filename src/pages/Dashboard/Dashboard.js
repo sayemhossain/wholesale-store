@@ -76,8 +76,7 @@ const Dashboard = () => {
                   </Link>
                   <Link to="/dashboard/manageproducts">Manage Products</Link>
                   <Link to="/dashboard/manageallorder">Manage All orders</Link>
-                  <Link to="/dashboard">Upload Blogs</Link>
-                  <Link to="/dashboard">Manage Blogs</Link>
+                  <Link to="/dashboard/contactmessage">Contact Messages</Link>
                   <Link to="/dashboard/alluser">All user & Make Admin</Link>
                   <Link to="/dashboard/alladmin">All admin</Link>
                 </>
