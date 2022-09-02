@@ -73,9 +73,7 @@ const Navbar = () => {
                 <Link to="/dashboard">Dashboard</Link>
               </li>
             )}
-            <li>
-              <a>Blog</a>
-            </li>
+
             <li>
               <Link to="/contact">Contact</Link>
             </li>

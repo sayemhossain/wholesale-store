@@ -12,7 +12,10 @@ import ManageProducts from "./pages/Dashboard/ManageProducts/ManageProducts";
 import ManageReviews from "./pages/Dashboard/ManageReviews/ManageReviews";
 import MyOrders from "./pages/Dashboard/MyOrders/MyOrders";
 import MyProfile from "./pages/Dashboard/MyProfile/MyProfile";
-import Payment from "./pages/Dashboard/Payment/Payment";
+import Bkash from "./pages/Dashboard/Payment/Bkash";
+import Nagad from "./pages/Dashboard/Payment/Nagad";
+import PaymentWraper from "./pages/Dashboard/Payment/PaymentWraper";
+import Rocket from "./pages/Dashboard/Payment/Rocket";
 import PaymentManagement from "./pages/Dashboard/PaymentManagement/PaymentManagement";
 import Home from "./pages/Home/Home/Home";
 import Products from "./pages/Products/Products";
@@ -50,7 +53,15 @@ function App() {
           <Route index element={<MyProfile></MyProfile>}></Route>
           <Route path="myprofile" element={<MyProfile></MyProfile>}></Route>
           <Route path="myorders" element={<MyOrders></MyOrders>}></Route>
-          <Route path="payment/:id" element={<Payment></Payment>}></Route>
+          <Route
+            path="paymentwraper/:id"
+            element={<PaymentWraper></PaymentWraper>}
+          >
+            <Route index element={<Bkash></Bkash>}></Route>
+            <Route path="bkash" element={<Bkash></Bkash>}></Route>
+            <Route path="nagad" element={<Nagad></Nagad>}></Route>
+            <Route path="rocket" element={<Rocket></Rocket>}></Route>
+          </Route>
           <Route
             path="paymentmanagement"
             element={<PaymentManagement></PaymentManagement>}

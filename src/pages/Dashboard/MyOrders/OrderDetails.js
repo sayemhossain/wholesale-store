@@ -84,7 +84,7 @@ const OrderDetails = ({ order, index }) => {
         </td>
         <td>
           {price && !paid && (
-            <Link to={`/dashboard/payment/${_id}`}>
+            <Link to={`/dashboard/paymentwraper/${_id}`}>
               <div className="flex justify-center">
                 <button className="btn btn-primary px-8 btn-xs">pay</button>
               </div>

@@ -4,7 +4,7 @@ import bkash from "../../../img/bKash-Dial-Payment.png";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init.js";
 
-const Payment = () => {
+const Bkash = () => {
   const { id } = useParams();
   const [user] = useAuthState(auth);
 
@@ -28,6 +28,7 @@ const Payment = () => {
     const orderQuantity = order.orderQuantity;
     const totalCost = order.totalCost;
     const address = order.address;
+    const method = "Nagad";
 
     const paymentData = {
       productName,
@@ -38,6 +39,7 @@ const Payment = () => {
       orderQuantity,
       totalCost,
       address,
+      method,
     };
     fetch(`https://stark-shelf-45913.herokuapp.com/payment`, {
       method: "POST",
@@ -54,34 +56,13 @@ const Payment = () => {
   };
   return (
     <div>
-      <div className=" md:px-20 pb-20 bg-base-100">
-        <div className="card bg-gray-500 text-gray-200 mb-3 rounded-none ">
-          <div class=" p-2 flex items-center">
-            <div>
-              <img className="w-36 mr-5" src={order.img} alt="" />
-            </div>
-            <div>
-              <h2>
-                <span className="text-sm">
-                  Hello, {order.customerNamer}
-                  <br></br>
-                </span>{" "}
-                <span className="font-bold">
-                  Please pay for : {order.productName}
-                </span>
-              </h2>
-              <p>Order quantity : {order.orderQuantity}</p>
-              <p>Total cost : ${order.totalCost}</p>
-            </div>
-          </div>
-        </div>
-
+      <div>
         <div class=" pt-10 bg-gray-100">
           <div className="text-center mb-4 ">
             <p className="text-xl font-semibold uppercase">
               Payment your money using bkash
             </p>
-            <p className="text-sm text-red-300 mt-1">
+            <p className="text-sm text-gray-600 mt-1">
               bKash Number: 01625-511680
             </p>
           </div>
@@ -93,16 +74,29 @@ const Payment = () => {
               <div className="bg-base-100 p-6">
                 <form action="" onSubmit={handlePayment}>
                   <div className="grid grid-cols-1 gap-1">
-                    <div class="form-control w-full">
-                      <label class="label">
-                        <span class="label-text">Your Name</span>
-                      </label>
-                      <input
-                        type="text"
-                        disabled
-                        value={user?.displayName}
-                        class="input input-bordered w-full input-sm "
-                      />
+                    <div className="flex gap-2">
+                      <div class="form-control w-full">
+                        <label class="label">
+                          <span class="label-text">Your Name</span>
+                        </label>
+                        <input
+                          type="text"
+                          disabled
+                          value={user?.displayName}
+                          class="input input-bordered w-full input-sm "
+                        />
+                      </div>
+                      <div class="form-control w-full">
+                        <label class="label">
+                          <span class="label-text">Payment Method</span>
+                        </label>
+                        <input
+                          type="text"
+                          disabled
+                          value="bKash"
+                          class="input input-bordered w-full input-sm "
+                        />
+                      </div>
                     </div>
                     <div class="form-control w-full">
                       <label class="label">
@@ -156,4 +150,4 @@ const Payment = () => {
   );
 };
 
-export default Payment;
+export default Bkash;
