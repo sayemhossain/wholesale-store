@@ -1,8 +1,5 @@
-import { loadStripe } from "@stripe/stripe-js";
 import React, { useEffect, useState } from "react";
-import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
-import Loading from "../../../shared/Loading/Loading.js";
 import bkash from "../../../img/bKash-Dial-Payment.png";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init.js";
