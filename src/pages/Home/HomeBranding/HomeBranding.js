@@ -22,7 +22,7 @@ const HomeBranding = () => {
           <img className="rounded-lg" src={banner2} alt="" />
           <div className="absolute top-24 right-12">
             <h1>New Season</h1>
-            <h1 className="text-3xl font-bold">Sale 40% Off</h1>
+            <h1 className="text-3xl font-bold">Best Products</h1>
             <p className="mt-3 underline">
               <Link to="/products">Shop Now</Link>
             </p>
