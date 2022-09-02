@@ -19,7 +19,7 @@ const ManageProductsRow = ({ product, index }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        toast.success("Delete successfull.");
+        alert("Delete successfull.");
       });
   };
   return (
@@ -37,7 +37,7 @@ const ManageProductsRow = ({ product, index }) => {
         <td className="text-justify">{description}</td>
         <td>{available_quantity}</td>
         <td>{minimum_order_quantity}</td>
-        <td>${price}</td>
+        <td>{price}tk</td>
         <td>
           <p
             onClick={handleDeleteTool}

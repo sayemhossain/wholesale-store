@@ -15,6 +15,7 @@ const Purchase = () => {
     _id,
     name,
     img,
+    main_price,
     price,
     description,
     minimum_order_quantity,
@@ -37,13 +38,16 @@ const Purchase = () => {
     }
 
     const totalCost = orderQuantity * price;
+    const profit = totalCost - main_price * orderQuantity;
     const order = {
       orderId: _id,
       productName: name,
       customerNamer: user?.displayName,
       user: user.email,
       img,
+      main_price,
       price,
+      profit,
       available_quantity,
       orderQuantity,
       totalCost,
@@ -69,7 +73,7 @@ const Purchase = () => {
           body: JSON.stringify({ newQuantity }),
         })
           .then((res) => res.json())
-          .then((data) => alert("Your order is Pending!"));
+          .then((data) => alert("Your order is successfull!"));
       });
     event.target.reset();
   };

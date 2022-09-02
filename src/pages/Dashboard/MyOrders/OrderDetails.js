@@ -20,6 +20,7 @@ const OrderDetails = ({ order, index }) => {
     orderId,
     productName,
     img,
+    main_price,
     price,
     customerNamer,
     address,
@@ -36,7 +37,7 @@ const OrderDetails = ({ order, index }) => {
     })
       .then((res) => res.json())
       .then((data) => {
-        toast.success("Delete successfull.");
+        alert("Delete successfull.");
       });
   };
   return (
@@ -54,7 +55,7 @@ const OrderDetails = ({ order, index }) => {
               <div class="font-bold text-sm">
                 <small>{productName}</small>
               </div>
-              <div class="text-sm opacity-50">Price: ${price}</div>
+              <div class="text-sm opacity-50">Price: {price} tk</div>
             </div>
           </div>
         </td>
@@ -66,7 +67,7 @@ const OrderDetails = ({ order, index }) => {
           <span class="badge badge-ghost badge-sm">phone : {phone}</span>
         </td>
         <td>Quantity : {orderQuantity}</td>
-        <td>${totalCost}</td>
+        <td>{totalCost} tk</td>
         <td>
           {price && !paid && (
             <button
@@ -89,23 +90,6 @@ const OrderDetails = ({ order, index }) => {
                 <button className="btn btn-primary px-8 btn-xs">pay</button>
               </div>
             </Link>
-          )}
-          {price && paid && (
-            <span className=" px-8">
-              <div className=" flex items-center justify-center ">
-                <FontAwesomeIcon
-                  className="text-green-400 mr-1"
-                  icon={faCircleCheck}
-                />
-                <span className="text-xl">paid</span>
-              </div>
-              <p className="text-sm text-center">
-                <small>
-                  Transaction Id: <br></br>
-                  <span className="text-red-600">{transactionId}</span>
-                </small>
-              </p>
-            </span>
           )}
         </td>
       </tr>

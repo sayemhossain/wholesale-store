@@ -32,8 +32,7 @@ const MyProfile = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
-        toast("Profile Updated");
+        alert("Profile Updated");
       });
     e.target.reset();
   };

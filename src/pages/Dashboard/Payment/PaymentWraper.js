@@ -40,7 +40,7 @@ const PaymentWraper = () => {
               </span>
             </h2>
             <p>Order quantity : {order.orderQuantity}</p>
-            <p>Total cost : ${order.totalCost}</p>
+            <p>Total cost : {order.totalCost} tk</p>
           </div>
         </div>
       </div>

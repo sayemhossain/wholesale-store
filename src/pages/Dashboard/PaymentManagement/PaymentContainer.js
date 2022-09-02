@@ -10,7 +10,7 @@ const PaymentContainer = ({ payment, index }) => {
       <td>{payment.bkashNumber}</td>
       <td>{payment.transId}</td>
       <td>{payment.orderQuantity}</td>
-      <td>{payment.totalCost}</td>
+      <td>{payment.totalCost} tk</td>
       <td>
         <FontAwesomeIcon
           className="text-green-400"

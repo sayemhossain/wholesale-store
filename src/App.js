@@ -17,6 +17,7 @@ import Nagad from "./pages/Dashboard/Payment/Nagad";
 import PaymentWraper from "./pages/Dashboard/Payment/PaymentWraper";
 import Rocket from "./pages/Dashboard/Payment/Rocket";
 import PaymentManagement from "./pages/Dashboard/PaymentManagement/PaymentManagement";
+import SubcriberList from "./pages/Dashboard/SubcriberList/SubcriberList";
 import Home from "./pages/Home/Home/Home";
 import Products from "./pages/Products/Products";
 import Purchase from "./pages/Purchase/Purchase";
@@ -86,6 +87,10 @@ function App() {
           <Route
             path="contactmessage"
             element={<ContactMessage></ContactMessage>}
+          ></Route>
+          <Route
+            path="subcribe"
+            element={<SubcriberList></SubcriberList>}
           ></Route>
           <Route path="alluser" element={<AllUser></AllUser>}></Route>
           <Route path="alladmin" element={<AllAdmin></AllAdmin>}></Route>

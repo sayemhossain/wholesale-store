@@ -7,6 +7,7 @@ const AddProducts = () => {
 
     const name = e.target.name.value;
     const price = e.target.price.value;
+    const main_price = e.target.main_price.value;
     const available_quantity = parseInt(e.target.available_quantity.value);
     const minimum_order_quantity = parseInt(
       e.target.minimum_order_quantity.value
@@ -21,6 +22,7 @@ const AddProducts = () => {
       minimum_order_quantity,
       available_quantity,
       price,
+      main_price,
     };
 
     fetch(`https://stark-shelf-45913.herokuapp.com/products`, {
@@ -31,7 +33,7 @@ const AddProducts = () => {
       body: JSON.stringify(product),
     })
       .then((res) => res.json())
-      .then((data) => toast.success("Tool successfully added."));
+      .then((data) => alert("Tool successfully added."));
     e.target.reset();
   };
   return (
@@ -63,7 +65,7 @@ const AddProducts = () => {
                 </div>
                 <div class="form-control">
                   <label class="label">
-                    <span class="label-text">Price</span>
+                    <span class="label-text">Selling Price</span>
                   </label>
                   <input
                     type="text"
@@ -73,16 +75,29 @@ const AddProducts = () => {
                   />
                 </div>
               </div>
-              <div class="form-control">
-                <label class="label">
-                  <span class="label-text">Available Quantity</span>
-                </label>
-                <input
-                  type="text"
-                  name="available_quantity"
-                  placeholder="avaiable quantity"
-                  class="input input-bordered input-sm"
-                />
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text">Main Price</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="main_price"
+                    placeholder="Main Price"
+                    class="input input-bordered input-sm"
+                  />
+                </div>
+                <div class="form-control">
+                  <label class="label">
+                    <span class="label-text">Available Quantity</span>
+                  </label>
+                  <input
+                    type="text"
+                    name="available_quantity"
+                    placeholder="avaiable quantity"
+                    class="input input-bordered input-sm"
+                  />
+                </div>
               </div>
               <div class="form-control">
                 <label class="label">

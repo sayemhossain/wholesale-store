@@ -38,7 +38,7 @@ const ManageAllOrder = () => {
                 <th>Produc Information</th>
                 <th>User Information</th>
                 <th>Order Information</th>
-                <th>Payment Status</th>
+                <th>Profit</th>
               </tr>
             </thead>
             <tbody>
@@ -57,7 +57,7 @@ const ManageAllOrder = () => {
                           <small>{order.productName}</small>
                         </div>
                         <div class="text-sm opacity-50">
-                          <span>Cost per unit : ${order.price}</span>
+                          <span>Cost per unit : {order.price} tk</span>
                         </div>
                       </div>
                     </div>
@@ -95,26 +95,10 @@ const ManageAllOrder = () => {
                     </span>
                     <br></br>
                     <span class="badge badge-ghost badge-sm">
-                      Total Cost : {order.totalCost}
+                      Total Cost : {order.totalCost} tk
                     </span>
                   </td>
-                  <td>
-                    {order.paid ? (
-                      <div className="flex justify-center">
-                        <FontAwesomeIcon
-                          className="text-2xl text-green-500"
-                          icon={faCircleCheck}
-                        />
-                      </div>
-                    ) : (
-                      <div className="flex justify-center">
-                        <FontAwesomeIcon
-                          className="text-2xl text-red-600"
-                          icon={faBan}
-                        />
-                      </div>
-                    )}
-                  </td>
+                  <td>{order.profit} tk</td>
                 </tr>
               ))}
             </tbody>
