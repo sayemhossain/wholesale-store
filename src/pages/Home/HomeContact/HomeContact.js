@@ -16,7 +16,7 @@ const HomeContact = () => {
       subject,
       text,
     };
-    fetch(`https://stark-shelf-45913.herokuapp.com/contact`, {
+    fetch(`http://localhost:5000/contact`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

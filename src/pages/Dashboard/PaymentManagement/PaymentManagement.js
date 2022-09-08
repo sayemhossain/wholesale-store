@@ -10,7 +10,7 @@ const PaymentManagement = () => {
 
   const [payments, setPayments] = useState([]);
   useEffect(() => {
-    fetch(`https://stark-shelf-45913.herokuapp.com/payments/${email}`)
+    fetch(`http://localhost:5000/payments/${email}`)
       .then((res) => res.json())
       .then((data) => setPayments(data));
   }, []);

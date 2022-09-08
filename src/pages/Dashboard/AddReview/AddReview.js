@@ -15,7 +15,7 @@ const AddReview = () => {
     const rating = e.target.rating.value;
 
     const review = { name, email, reviewtxt, location, rating };
-    fetch(`https://stark-shelf-45913.herokuapp.com/reviews`, {
+    fetch(`http://localhost:5000/reviews`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

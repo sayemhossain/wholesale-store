@@ -4,7 +4,7 @@ import ContactMessageContainer from "./ContactMessageContainer";
 const ContactMessage = () => {
   const [contacts, setContacts] = useState([]);
   useEffect(() => {
-    fetch(`https://stark-shelf-45913.herokuapp.com/contact`)
+    fetch(`http://localhost:5000/contact`)
       .then((res) => res.json())
       .then((data) => setContacts(data));
   }, []);

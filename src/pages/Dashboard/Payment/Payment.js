@@ -10,7 +10,7 @@ const Payment = () => {
 
   const [order, setOrder] = useState({});
   useEffect(() => {
-    fetch(`https://stark-shelf-45913.herokuapp.com/order/${id}`)
+    fetch(`http://localhost:5000/order/${id}`)
       .then((res) => res.json())
       .then((data) => setOrder(data));
   }, []);
@@ -39,7 +39,7 @@ const Payment = () => {
       totalCost,
       address,
     };
-    fetch(`https://stark-shelf-45913.herokuapp.com/payment`, {
+    fetch(`http://localhost:5000/payment`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

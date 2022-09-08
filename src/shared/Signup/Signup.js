@@ -29,8 +29,9 @@ const Signup = () => {
     console.log(name);
 
     await createUserWithEmailAndPassword(email, password);
+
     // for update name
-    updateProfile({ displayName: name });
+    await updateProfile({ displayName: name });
   };
   let errorElement;
   if (error) {
