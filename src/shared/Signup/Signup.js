@@ -31,7 +31,7 @@ const Signup = () => {
     await createUserWithEmailAndPassword(email, password);
 
     // for update name
-    await updateProfile({ displayName: name });
+    // await updateProfile({ displayName: name });
   };
   let errorElement;
   if (error) {

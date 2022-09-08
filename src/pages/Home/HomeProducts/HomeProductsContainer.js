@@ -1,4 +1,4 @@
-import { faStar } from "@fortawesome/free-solid-svg-icons";
+import { faCartPlus, faStar } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import { useNavigate } from "react-router-dom";
@@ -58,7 +58,13 @@ const HomeProductsContainer = ({ product }) => {
             >
               Order Now
             </button>
-            <button className="btn btn-success btn-xs">Add to cart</button>
+            <button className="btn btn-success btn-xs text-white">
+              Add to cart{" "}
+              <FontAwesomeIcon
+                className="ml-1"
+                icon={faCartPlus}
+              ></FontAwesomeIcon>
+            </button>
           </div>
         </div>
       </div>

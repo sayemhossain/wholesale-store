@@ -1,4 +1,8 @@
-import { faAngleDown, faUser } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleDown,
+  faCartPlus,
+  faUser,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { signOut } from "firebase/auth";
 import React from "react";
@@ -69,9 +73,11 @@ const Navbar = () => {
               <Link to="/products">Products</Link>
             </li>
             {user && (
-              <li>
-                <Link to="/dashboard">Dashboard</Link>
-              </li>
+              <>
+                <li>
+                  <Link to="/dashboard">Dashboard</Link>
+                </li>
+              </>
             )}
 
             <li>
@@ -96,6 +102,10 @@ const Navbar = () => {
               <p className="font-semibold uppercase hover:cursor-pointer">
                 {user ? user.displayName : "Unknown user"}
               </p>
+              <FontAwesomeIcon
+                className=" text-red-500 ring-2 ring-gray-400 rounded-full p-1"
+                icon={faCartPlus}
+              ></FontAwesomeIcon>
             </div>
           ) : (
             <>
