@@ -10,7 +10,7 @@ const PaymentWraper = () => {
 
   const [order, setOrder] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/order/${id}`)
+    fetch(`https://stark-shelf-45913.herokuapp.com/order/${id}`)
       .then((res) => res.json())
       .then((data) => setOrder(data));
   }, []);

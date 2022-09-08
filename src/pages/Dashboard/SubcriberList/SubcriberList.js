@@ -4,7 +4,7 @@ import SubcriberListContainer from "./SubcriberListContainer";
 const SubcriberList = () => {
   const [subcribes, setSubcribes] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/subcribe`)
+    fetch(`https://stark-shelf-45913.herokuapp.com/subcribe`)
       .then((res) => res.json())
       .then((data) => setSubcribes(data));
   }, []);

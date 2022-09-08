@@ -8,7 +8,7 @@ const Subscribe = () => {
     const subscribeData = {
       email,
     };
-    fetch(`http://localhost:5000/subcribe`, {
+    fetch(`https://stark-shelf-45913.herokuapp.com/subcribe`, {
       method: "POST",
       headers: {
         "content-type": "application/json",

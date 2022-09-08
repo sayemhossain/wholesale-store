@@ -9,7 +9,7 @@ const OrderDetails = ({ order, index }) => {
 
   // const [payment, setPayment] = useState({});
   // useEffect(() => {
-  //   fetch(`http://localhost:5000/payment/${id}`)
+  //   fetch(`https://stark-shelf-45913.herokuapp.com/payment/${id}`)
   //     .then((res) => res.json())
   //     .then((data) => setPayment(data));
   // }, []);
@@ -32,7 +32,7 @@ const OrderDetails = ({ order, index }) => {
   } = order;
 
   const handleDeleteOrder = () => {
-    fetch(`http://localhost:5000/order/${_id}`, {
+    fetch(`https://stark-shelf-45913.herokuapp.com/order/${_id}`, {
       method: "DELETE",
     })
       .then((res) => res.json())

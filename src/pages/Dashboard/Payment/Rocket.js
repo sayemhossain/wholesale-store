@@ -10,7 +10,7 @@ const Rocket = () => {
 
   const [order, setOrder] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/order/${id}`)
+    fetch(`https://stark-shelf-45913.herokuapp.com/order/${id}`)
       .then((res) => res.json())
       .then((data) => setOrder(data));
   }, []);
@@ -41,7 +41,7 @@ const Rocket = () => {
       address,
       method,
     };
-    fetch(`http://localhost:5000/payment`, {
+    fetch(`https://stark-shelf-45913.herokuapp.com/payment`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
