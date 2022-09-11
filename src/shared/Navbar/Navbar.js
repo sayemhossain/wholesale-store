@@ -102,10 +102,6 @@ const Navbar = () => {
               <p className="font-semibold uppercase hover:cursor-pointer">
                 {user ? user.displayName : "Unknown user"}
               </p>
-              <FontAwesomeIcon
-                className=" text-red-500 ring-2 ring-gray-400 rounded-full p-1"
-                icon={faCartPlus}
-              ></FontAwesomeIcon>
             </div>
           ) : (
             <>

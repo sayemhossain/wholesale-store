@@ -51,19 +51,12 @@ const HomeProductsContainer = ({ product }) => {
               {minimum_order_quantity}
             </span>
           </p>
-          <div className="mt-3 mb-1 text-center flex gap-4">
+          <div className="mt-3 mb-1 text-center  gap-4">
             <button
               onClick={() => navigateToProductDetails(_id)}
               className="btn btn-secondary btn-xs"
             >
               Order Now
-            </button>
-            <button className="btn btn-success btn-xs text-white">
-              Add to cart{" "}
-              <FontAwesomeIcon
-                className="ml-1"
-                icon={faCartPlus}
-              ></FontAwesomeIcon>
             </button>
           </div>
         </div>
